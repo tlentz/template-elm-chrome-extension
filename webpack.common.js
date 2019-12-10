@@ -83,7 +83,6 @@ module.exports = {
         exclude: [/elm-stuff/, /node_modules/],
         loaders: [
           MiniCssExtractPlugin.loader,
-          "style-loader",
           "css-loader?url=false",
           "sass-loader"
         ]
@@ -91,17 +90,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: [/elm-stuff/, /node_modules/],
-        loaders: [
-          MiniCssExtractPlugin.loader,
-          "style-loader",
-          "css-loader?url=false"
-        ]
-      },
-      {
-        test: /\.js$/,
-        enforce: "pre",
-        exclude: /node_modules/,
-        loader: "eslint-loader"
+        loaders: [MiniCssExtractPlugin.loader, "css-loader?url=false"]
       },
       {
         test: /\.js$/,

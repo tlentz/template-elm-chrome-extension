@@ -39,6 +39,7 @@
     "elm-test": "^0.19.1",
     "elm-webpack-loader": "^6.0.1",
     "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-loader": "^3.0.3",
     "extract-text-webpack-plugin": "4.0.0-alpha.0",
     "fibers": "^4.0.2",

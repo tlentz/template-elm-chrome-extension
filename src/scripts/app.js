@@ -1,7 +1,9 @@
 /* global window document */
 
-import "../styles/styles.less";
+import "../styles/styles.scss";
 
-window.addEventListener("load", () => {
-  document.body.innerHTML += "\nAnd it works!";
-});
+// window.addEventListener("load", () => {
+//   document.body.innerHTML += "\nAnd it works!";
+// });
+
+console.log("hi");
