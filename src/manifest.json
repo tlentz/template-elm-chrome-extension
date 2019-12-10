@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "template-chrome-extension",
-  "short_name": "template-chrome-extension",
+  "name": "template-elm-chrome-extension",
+  "short_name": "template-elm-chrome-extension",
   "version": "#version#",
   "description": "#description#",
   "icons": {
