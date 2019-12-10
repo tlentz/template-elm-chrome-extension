@@ -1,7 +1,7 @@
 {
-  "name": "template-chrome-extension",
-  "version": "0.9.0",
-  "description": "template-chrome-extension",
+  "name": "template-elm-chrome-extension",
+  "version": "0.0.1",
+  "description": "template-elm-chrome-extension",
   "main": "build/index.html",
   "scripts": {
     "debug": "webpack --config webpack.dev.js",
@@ -11,18 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:myTerminal/template-chrome-extension-webpack.git"
+    "url": "git@github.com/tlentz/template-elm-chrome-extension.git"
   },
   "bugs": {
-    "url": "https://github.com/myTerminal/template-chrome-extension-webpack/issues"
+    "url": "https://github.com/tlentz/template-elm-chrome-extension/issues"
   },
-  "homepage": "https://github.com/myTerminal/template-chrome-extension-webpack#readme",
+  "homepage": "https://github.com/tlentz/template-elm-chrome-extension#readme",
   "keywords": [
     "template",
-    "chrome-extension"
+    "chrome-extension",
+    "elm",
+    "webpack"
   ],
-  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
-  "license": "CC-BY-NC-SA-4.0",
+  "author": "Tyler Lentz",
+  "license": "BSD-3-Clause",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "6.26.3",
