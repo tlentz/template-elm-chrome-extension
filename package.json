@@ -1,0 +1,57 @@
+{
+  "name": "template-chrome-extension",
+  "version": "0.9.0",
+  "description": "template-chrome-extension",
+  "main": "build/index.html",
+  "scripts": {
+    "debug": "webpack --config webpack.dev.js",
+    "develop": "webpack --config webpack.dev.js --watch",
+    "live": "webpack-dev-server --config webpack.live.js --open",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:myTerminal/template-chrome-extension-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myTerminal/template-chrome-extension-webpack/issues"
+  },
+  "homepage": "https://github.com/myTerminal/template-chrome-extension-webpack#readme",
+  "keywords": [
+    "template",
+    "chrome-extension"
+  ],
+  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.7.0",
+    "clean-webpack-plugin": "1.0.1",
+    "copy-webpack-plugin": "4.6.0",
+    "css-loader": "2.1.0",
+    "effortless-css": "0.10.1",
+    "eslint": "5.13.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-myterminal": "0.10.1",
+    "eslint-loader": "2.1.1",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.0",
+    "eslint-plugin-react": "7.12.4",
+    "extract-text-webpack-plugin": "4.0.0-alpha.0",
+    "file-loader": "3.0.1",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "less": "3.9.0",
+    "less-loader": "4.1.0",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
+    "style-loader": "0.23.1",
+    "uglifyjs-webpack-plugin": "2.1.1",
+    "webpack": "4.25.1",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-server": "3.1.14",
+    "webpack-merge": "4.2.1"
+  }
+}

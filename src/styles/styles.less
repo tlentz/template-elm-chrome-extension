@@ -1,0 +1,34 @@
+@import '../../node_modules/effortless-css/less/all.less';
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: bold;
+    src: url('../fonts/OpenSans-Bold.ttf');
+}
+
+html {
+
+    .clearfix {
+        clear: both;
+    }
+
+    body {
+        .box-sizing(border-box);
+        margin: 0;
+        padding: 0;
+        width: 360px;
+        font-family: OpenSans;
+
+        #title {
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+    }
+}
