@@ -104,6 +104,10 @@ module.exports = {
     ]
   },
   plugins: [clean, elmMinify, copy, miniCSS, optimizeCSS, html],
+  resolve: {
+    modules: ["node_modules"],
+    extensions: [".js", ".elm", ".scss", ".png"]
+  },
   output: {
     filename: "scripts/[name].js",
     path: path.resolve(__dirname, outputDir),
