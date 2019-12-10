@@ -49,16 +49,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.elm$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        use: {
-          loader: "elm-webpack-loader",
-          options: {
-            optimize: true
-          }
-        }
-      },
-      {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: {
           loader: "file-loader",
