@@ -1,15 +1,14 @@
 # template-elm-chrome-extension-webpack
 
-[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0)
-
-A template to create Google Chrome Extensions with Webpack as the module-bundler
+A template to create Google Chrome Extensions with Elm and Webpack as the module-bundler
 
 ## Technologies
 
 ### Web
 
+- [ELM](https://elm-lang.org/)
 - [ES2015](http://es6-features.org/)
-- [Less CSS](http://lesscss.org/)
+- [SASS](https://sass-lang.com/documentation/syntax)
 
 ### Module bundler: Webpack
 
@@ -31,6 +30,7 @@ A template to create Google Chrome Extensions with Webpack as the module-bundler
 - [file-loader](https://www.npmjs.com/package/file-loader) to work with other file types
 - [eslint-loader](https://www.npmjs.com/package/eslint-loader) to run ESLint on JavaScript files
 - [babel-loader](https://www.npmjs.com/package/babel-loader) to perform babel transpilations with the help of supporting dependencies
+- [elm-webpack-loader](https://www.npmjs.com/package/elm-webpack-loader) to load elm files
 
 ##### Supporting dependencies
 
