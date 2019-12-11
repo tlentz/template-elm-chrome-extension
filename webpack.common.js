@@ -1,12 +1,9 @@
 /* global require module __dirname */
 
 const packageDetails = require("./package.json");
-
 const sourceDir = "src";
 const outputDir = "build";
-
 const path = require("path");
-
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");

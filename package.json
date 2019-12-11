@@ -9,7 +9,8 @@
     "live": "webpack-dev-server --config webpack.live.js --open --hot --colors",
     "build": "webpack --config webpack.prod.js",
     "start": "npm run live",
-    "restart": "rm -rf elm-stuff && npm start"
+    "restart": "rm -rf elm-stuff && npm start",
+    "test": "elm-test"
   },
   "repository": {
     "type": "git",
@@ -39,7 +40,7 @@
     "elm": "^0.19.1-3",
     "elm-hot-webpack-loader": "^1.1.6",
     "elm-minify": "^2.0.4",
-    "elm-test": "^0.19.1",
+    "elm-test": "^0.19.1-revision2",
     "elm-webpack-loader": "^6.0.1",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
