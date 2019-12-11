@@ -41,7 +41,8 @@ const elmMinify = new ElmMinify.WebpackPlugin();
 module.exports = {
   mode: "development",
   entry: {
-    app: `./${sourceDir}/scripts/app.js`
+    app: `./${sourceDir}/scripts/app.js`,
+    background: `./${sourceDir}/scripts/background.js`
   },
   module: {
     rules: [

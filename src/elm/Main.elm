@@ -32,7 +32,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ div [] [ text "This is an elm app!!" ]
+        [ div [] [ text "This is an elm app!" ]
         , button [ onClick Increment ] [ text "+1" ]
         , div [] [ text <| String.fromInt model.count ]
         , button [ onClick Decrement ] [ text "-1" ]
