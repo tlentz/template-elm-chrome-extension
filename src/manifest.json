@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "template-chrome-extension",
-  "short_name": "template-chrome-extension",
+  "name": "template-elm-chrome-extension",
+  "short_name": "template-elm-chrome-extension",
   "version": "#version#",
   "description": "#description#",
   "icons": {
@@ -12,8 +12,10 @@
   "browser_action": {
     "default_popup": "index.html"
   },
-  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
-  "permissions": [
-    "activeTab"
-  ]
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": true
+  },
+  "author": "Tyler Lentz",
+  "permissions": ["activeTab"]
 }

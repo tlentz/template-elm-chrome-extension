@@ -1,0 +1,32 @@
+@font-face {
+  font-family: OpenSans;
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-weight: bold;
+  src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+html {
+  .clearfix {
+    clear: both;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 360px;
+    font-family: OpenSans;
+    background: blue;
+    color: red;
+
+    #title {
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.2em;
+    }
+  }
+}

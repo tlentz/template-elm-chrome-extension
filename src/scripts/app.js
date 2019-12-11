@@ -1,10 +1,6 @@
-/* global window document */
+"use strict";
 
-import '../styles/styles.less';
+import "../styles/styles.scss";
 
-window.addEventListener(
-    'load',
-    () => {
-        document.body.innerHTML += '\nAnd it works!';
-    }
-);
+const { Elm } = require("../elm/Main");
+var app = Elm.Main.init({ node: document.querySelector("elm-simple") });
