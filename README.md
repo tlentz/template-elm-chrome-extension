@@ -44,7 +44,7 @@ A template to create Google Chrome Extensions with Elm and Webpack as the module
 
 - `npm run debug` to run Webpack with development configuration.  
   In this mode, Webpack generates source-maps for bundled JavaScript resources to simplify debugging of JavaScript in the web-browser.
-- `npm run develop` to run Webpack with development configuration and keep watching for file changes within source.  
+- `npm run dev` to run Webpack with development configuration and keep watching for file changes within source.  
   In this mode, Webpack generates source-maps for bundled JavaScript resources to simplify debugging of JavaScript in the web-browser.
 - `npm run live` to run Webpack with development configuration and keep watching for file changes within source and reload the web-browser on every change.  
   In this mode, Webpack generates source-maps for bundled JavaScript resources to simplify debugging of JavaScript in the web-browser and provides a live-development experience.
