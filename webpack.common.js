@@ -29,14 +29,9 @@ const copy = new CopyWebpackPlugin([
     to: "icons"
   }
 ]);
-const optimizeCSS = new OptimizeCssAssetsPlugin();
 const html = new HtmlWebpackPlugin({
   template: `${sourceDir}/index.html`
 });
-const miniCSS = new MiniCssExtractPlugin({
-  filename: "[name]-[hash].css"
-});
-const elmMinify = new ElmMinify.WebpackPlugin();
 
 module.exports = {
   mode: "development",
@@ -69,16 +64,12 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: [/elm-stuff/, /node_modules/],
-        loaders: [
-          MiniCssExtractPlugin.loader,
-          "css-loader?url=false",
-          "sass-loader"
-        ]
+        loaders: ["style-loader", "css-loader?url=false", "sass-loader"]
       },
       {
         test: /\.css$/,
         exclude: [/elm-stuff/, /node_modules/],
-        loaders: [MiniCssExtractPlugin.loader, "css-loader?url=false"]
+        loaders: ["style-loader", "css-loader?url=false"]
       },
       {
         test: /\.js$/,
@@ -91,7 +82,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [clean, elmMinify, copy, miniCSS, optimizeCSS, html],
+  plugins: [clean, copy, html],
   resolve: {
     modules: ["node_modules"],
     extensions: [".js", ".elm", ".scss", ".png"]

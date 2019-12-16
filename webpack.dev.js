@@ -3,13 +3,14 @@
 const webpack = require("webpack");
 const WebpackMerge = require("webpack-merge");
 const commonConfig = require("./webpack.common.js");
-var withDebug = !process.env["npm_config_nodebug"];
+const ChromeExtensionReloader = require("webpack-chrome-extension-reloader");
 
 module.exports = WebpackMerge(commonConfig, {
-  //   devtool: "inline-source-map",
+  devtool: "inline-source-map",
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new ChromeExtensionReloader()
   ],
   module: {
     rules: [
@@ -22,7 +23,7 @@ module.exports = WebpackMerge(commonConfig, {
             loader: "elm-webpack-loader",
             options: {
               // add Elm's debug overlay to output
-              debug: withDebug,
+              debug: false,
               forceWatch: true
             }
           }

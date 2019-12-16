@@ -23,19 +23,19 @@ update : Msg -> Model -> Model
 update msg model =
     case msg of
         Increment ->
-            { model | count = model.count + 1 }
+            { model | count = model.count + 2 }
 
         Decrement ->
-            { model | count = model.count - 1 }
+            { model | count = model.count - 3 }
 
 
 view : Model -> Html Msg
 view model =
     div []
         [ div [] [ text "This is an elm app!" ]
-        , button [ onClick Increment ] [ text "+1" ]
+        , button [ onClick Increment ] [ text "+2" ]
         , div [] [ text <| String.fromInt model.count ]
-        , button [ onClick Decrement ] [ text "-1" ]
+        , button [ onClick Decrement ] [ text "-3" ]
         ]
 
 

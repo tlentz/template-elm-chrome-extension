@@ -5,7 +5,7 @@
   "main": "build/index.html",
   "scripts": {
     "debug": "webpack --config webpack.dev.js",
-    "develop": "webpack --config webpack.dev.js --watch",
+    "dev": "webpack --config webpack.dev.js --watch",
     "live": "webpack-dev-server --config webpack.live.js --open --hot --colors",
     "build": "webpack --config webpack.prod.js",
     "start": "npm run live",
@@ -61,6 +61,7 @@
     "style-loader": "0.23.1",
     "uglifyjs-webpack-plugin": "2.1.1",
     "webpack": "^4.41.2",
+    "webpack-chrome-extension-reloader": "^1.3.0",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14",
     "webpack-merge": "4.2.1"
