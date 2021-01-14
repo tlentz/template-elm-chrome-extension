@@ -1,43 +1,21 @@
 /* global require module __dirname */
 
 const packageDetails = require("./package.json");
-const sourceDir = "src";
-const outputDir = "build";
 const path = require("path");
-const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// to extract the css as a separate file
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// Minify elm code
-const ElmMinify = require("elm-minify");
 
-const clean = new CleanWebpackPlugin([outputDir]);
-const copy = new CopyWebpackPlugin([
-  {
-    from: `${sourceDir}/manifest.json`,
-    transform: (content, path) =>
-      content
-        .toString()
-        .replace(/#version#/g, packageDetails.version)
-        .replace(/#description#/g, packageDetails.description)
-  },
-  {
-    from: `${sourceDir}/icons`,
-    to: "icons"
-  }
-]);
-const html = new HtmlWebpackPlugin({
-  template: `${sourceDir}/index.html`
-});
+const sourceDir = "src";
+const outputDir = "TemplateElmChromeExtension";
 
 module.exports = {
+  context: __dirname,
   mode: "development",
   entry: {
-    app: `./${sourceDir}/scripts/app.js`,
-    background: `./${sourceDir}/scripts/background.js`
+    app: `./${sourceDir}/js/app/app.js`,
+    background: `./${sourceDir}/js/background.js`,
+    'content-script': `./${sourceDir}/js/content-script.js`
   },
   module: {
     rules: [
@@ -46,7 +24,7 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "fonts/[name].[ext]",
+            name: "assets/fonts/[name].[ext]",
             publicPath: "../"
           }
         }
@@ -56,7 +34,7 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "images/[name].[ext]",
+            name: "assets/images/[name].[ext]",
             publicPath: "../"
           }
         }
@@ -74,7 +52,13 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        options: {
+          plugins: [
+            "@babel/plugin-proposal-class-properties",
+            "@babel/plugin-proposal-private-methods"
+          ]
+        }
       },
       {
         test: /.html$/,
@@ -82,13 +66,34 @@ module.exports = {
       }
     ]
   },
-  plugins: [clean, copy, html],
+  plugins: [
+    new CleanWebpackPlugin([outputDir]),
+    new CopyWebpackPlugin([
+      {
+        from: `${sourceDir}/manifest.json`,
+        transform: (content, path) =>
+          content
+            .toString()
+            .replace(/#version#/g, packageDetails.version)
+            .replace(/#description#/g, packageDetails.description)
+      },
+      {
+        from: `${sourceDir}/assets/icons`,
+        to: "icons"
+      }
+    ]),
+    new HtmlWebpackPlugin({
+      template: `${sourceDir}/js/app/app.html`,
+      filename: "app.html",
+      chunks: ['app'],
+    }),
+  ],
   resolve: {
     modules: ["node_modules"],
     extensions: [".js", ".elm", ".scss", ".png"]
   },
   output: {
-    filename: "scripts/[name].js",
+    filename: "[name].js",
     path: path.resolve(__dirname, outputDir),
     publicPath: ""
   }

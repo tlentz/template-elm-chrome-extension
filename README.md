@@ -50,3 +50,4 @@ A template to create Google Chrome Extensions with Elm and Webpack as the module
   In this mode, Webpack generates source-maps for bundled JavaScript resources to simplify debugging of JavaScript in the web-browser and provides a live-development experience.
 - `npm run build` to run Webpack with production configuration.  
   In this mode, Webpack minifies the JavaScript bundles and there are no source-maps created.
+- `npm run prod` to run Webpack with production configuration and produce a zipped output folder

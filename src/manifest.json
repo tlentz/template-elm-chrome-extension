@@ -10,12 +10,22 @@
     "128": "icons/icon128.png"
   },
   "browser_action": {
-    "default_popup": "index.html"
+    "default_title": "Template Elm Chrome Extension",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "app.html"
   },
   "background": {
-    "scripts": ["scripts/background.js"],
+    "scripts": [
+      "background.js"
+    ],
     "persistent": true
   },
   "author": "Tyler Lentz",
-  "permissions": ["activeTab"]
+  "permissions": [
+    "activeTab"
+  ]
 }
