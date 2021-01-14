@@ -1,6 +1,6 @@
 # template-elm-chrome-extension
 
-A template to create Google Chrome Extensions with Elm and Webpack as the module-bundler
+A template repository for building a chrome extension with webpack and elm.
 
 ## Technologies
 
