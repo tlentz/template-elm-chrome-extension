@@ -8,10 +8,7 @@ const commonConfig = require("./webpack.common.js");
 
 module.exports = WebpackMerge(commonConfig, {
   devtool: "inline-source-map",
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
-  ],
+  plugins: [new webpack.NamedModulesPlugin(), new webpack.NoEmitOnErrorsPlugin()],
   module: {
     rules: [
       {

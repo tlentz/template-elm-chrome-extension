@@ -2,19 +2,16 @@
 
 const webpack = require("webpack");
 const WebpackMerge = require("webpack-merge");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const commonConfig = require("./webpack.common.js");
-
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ElmMinify = require("elm-minify");
 const optimizeCSS = new OptimizeCssAssetsPlugin();
-const miniCSS = new MiniCssExtractPlugin({
-  filename: "[name]-[hash].css"
-});
 const elmMinify = new ElmMinify.WebpackPlugin();
-const uglifyjs = new UglifyJSPlugin();
 
 module.exports = WebpackMerge(commonConfig, {
   mode: "production",
-  plugins: [elmMinify, miniCSS, optimizeCSS, uglifyjs],
+  plugins: [elmMinify],
   module: {
     rules: [
       {
@@ -23,24 +20,10 @@ module.exports = WebpackMerge(commonConfig, {
         use: {
           loader: "elm-webpack-loader",
           options: {
-            optimize: true
-          }
-        }
+            optimize: true,
+          },
+        },
       },
-      {
-        test: /\.css$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        loaders: [MiniCssExtractPlugin.loader, "css-loader?url=false"]
-      },
-      {
-        test: /\.scss$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        loaders: [
-          MiniCssExtractPlugin.loader,
-          "css-loader?url=false",
-          "sass-loader"
-        ]
-      }
-    ]
-  }
+    ],
+  },
 });
